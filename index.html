@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>일잇다(EATTA) | AI 기반 맞춤형 직무·과제 매칭 플랫폼</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="progress-bar" id="progressBar"></div>
+
+  <header class="site-header" id="top">
+    <nav class="navbar">
+      <a href="#top" class="logo">
+        <span class="logo-mark">잇</span>
+        <span>
+          <strong>일잇다</strong>
+          <small>EATTA</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="메뉴 열기">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#problem">문제 정의</a></li>
+        <li><a href="#solution">서비스</a></li>
+        <li><a href="#data">공공데이터</a></li>
+        <li><a href="#ai">AI 기술</a></li>
+        <li><a href="#business">사업화</a></li>
+        <li><a href="#contact" class="nav-cta">문의하기</a></li>
+      </ul>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">고용노동 공공데이터 · AI 활용 서비스</p>
+        <h1>
+          개인의 강점과 기업의 과제를<br />
+          AI로 연결하는 고용 매칭 플랫폼
+        </h1>
+        <p class="hero-desc">
+          일잇다는 발달장애인, 장애인, 경력단절자, 청년 구직자 등
+          고용 취약계층의 비정형 역량을 분석하고 기업 업무를 세부 과제로
+          분해하여 맞춤형 직무 경험으로 연결합니다.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#solution" class="btn primary">서비스 살펴보기</a>
+          <a href="#demo" class="btn secondary">매칭 데모 보기</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="card-top">
+          <span>AI Matching Score</span>
+          <strong id="heroScore">87%</strong>
+        </div>
+
+        <div class="match-box">
+          <div>
+            <small>사용자 강점</small>
+            <p>반복 집중력 · 색감 인지 · 꼼꼼함</p>
+          </div>
+          <div class="arrow">→</div>
+          <div>
+            <small>추천 과제</small>
+            <p>자료 정리 · 이미지 분류 · 문서 검토</p>
+          </div>
+        </div>
+
+        <div class="mini-chart">
+          <span style="height: 52%"></span>
+          <span style="height: 74%"></span>
+          <span style="height: 88%"></span>
+          <span style="height: 63%"></span>
+          <span style="height: 91%"></span>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="section" id="problem">
+      <div class="section-title">
+        <p class="eyebrow">Problem</p>
+        <h2>기존 채용 플랫폼의 한계</h2>
+        <p>
+          기존 플랫폼은 이력서와 채용공고 중심으로 작동하기 때문에,
+          고용 취약계층의 실제 강점과 수행 가능한 업무를 세밀하게 반영하기 어렵습니다.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <article class="info-card">
+          <span class="number">01</span>
+          <h3>이력서 중심 구조</h3>
+          <p>
+            그림, 영상, 반복 작업 능력, 비언어적 표현처럼 정형 이력서에 담기 어려운
+            역량이 평가에서 제외되기 쉽습니다.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <span class="number">02</span>
+          <h3>공고 중심 매칭</h3>
+          <p>
+            기업의 채용공고는 일반 구직자 기준으로 작성되어 장애인·청년·경력단절자에게
+            적합한 세부 과제를 찾기 어렵습니다.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <span class="number">03</span>
+          <h3>직무 재설계 부족</h3>
+          <p>
+            기업은 장애인 고용 의무와 ESG 요구가 있어도 어떤 업무를 어떻게 나누어
+            제공해야 할지 판단하기 어렵습니다.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section dark-section" id="solution">
+      <div class="section-title light">
+        <p class="eyebrow">Solution</p>
+        <h2>일잇다의 핵심 서비스 구조</h2>
+        <p>
+          일잇다는 “직무명”이 아니라 “세부 과제 수행 가능성”을 기준으로
+          구직자와 기업을 연결합니다.
+        </p>
+      </div>
+
+      <div class="feature-layout">
+        <div class="feature-list">
+          <button class="feature-item active" data-feature="portfolio">
+            디지털 포트폴리오 등록
+          </button>
+          <button class="feature-item" data-feature="analysis">
+            AI 기반 강점 분석
+          </button>
+          <button class="feature-item" data-feature="task">
+            기업 업무 세부 과제 분해
+          </button>
+          <button class="feature-item" data-feature="curator">
+            큐레이터 검토
+          </button>
+          <button class="feature-item" data-feature="growth">
+            직무훈련·성장 경로 추천
+          </button>
+        </div>
+
+        <article class="feature-panel" id="featurePanel">
+          <p class="panel-label">핵심 기능 01</p>
+          <h3>디지털 포트폴리오 등록</h3>
+          <p>
+            구직자는 그림, 사진, 영상, 음성, 자유서술형 자기소개 등 비정형 자료를
+            등록할 수 있습니다. 이를 통해 기존 이력서로 표현하기 어려운 강점을
+            데이터화할 수 있습니다.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="data">
+      <div class="section-title">
+        <p class="eyebrow">Public Data</p>
+        <h2>고용노동 공공데이터 활용</h2>
+        <p>
+          장애인 고용, 워크넷 채용정보, NCS 직무데이터, 직업훈련 데이터 등을 결합하여
+          추천의 현실성과 정책 연계성을 높입니다.
+        </p>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>제공기관</th>
+              <th>데이터명</th>
+              <th>활용 방식</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>한국장애인고용공단</td>
+              <td>장애인 취업 정보</td>
+              <td>장애유형·지역·직종 기반 추천 후보군 구성</td>
+            </tr>
+            <tr>
+              <td>한국장애인고용공단</td>
+              <td>중증장애인 지원고용 데이터</td>
+              <td>장애유형별 맞춤 훈련 및 지원 정책 연계</td>
+            </tr>
+            <tr>
+              <td>한국고용정보원</td>
+              <td>직무데이터사전 / NCS</td>
+              <td>기업 업무를 능력단위와 세부 과제로 분해</td>
+            </tr>
+            <tr>
+              <td>한국고용정보원</td>
+              <td>워크넷 채용정보</td>
+              <td>실시간 노동시장 수요 반영 및 직무 스코어링</td>
+            </tr>
+            <tr>
+              <td>고용노동부</td>
+              <td>대체인력 채용지원 서비스</td>
+              <td>경력단절자 대상 일자리 수요 기업 발굴</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="ai">
+      <div class="section-title">
+        <p class="eyebrow">AI System</p>
+        <h2>AI 기반 분석·추천 구조</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <span>1</span>
+          <div>
+            <h3>포트폴리오 분석</h3>
+            <p>NLP와 컴퓨터 비전으로 텍스트·이미지·영상에서 강점 지표를 추출합니다.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <span>2</span>
+          <div>
+            <h3>기업 업무 분해</h3>
+            <p>채용공고와 직무기술서를 과제명, 난이도, 필요 역량 단위로 분해합니다.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <span>3</span>
+          <div>
+            <h3>임베딩 유사도 계산</h3>
+            <p>사용자 강점 벡터와 직무 과제 벡터 사이의 코사인 유사도를 계산합니다.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <span>4</span>
+          <div>
+            <h3>Human-in-the-loop 검토</h3>
+            <p>AI 추천 결과를 큐레이터와 기관 담당자가 검토하여 편향과 오류를 줄입니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section demo-section" id="demo">
+      <div class="section-title">
+        <p class="eyebrow">Interactive Demo</p>
+        <h2>간단 매칭 데모</h2>
+        <p>
+          아래 값을 조정하면 사용자의 강점과 과제 적합도 점수가 어떻게 바뀌는지 확인할 수 있습니다.
+        </p>
+      </div>
+
+      <div class="demo-card">
+        <label>
+          반복 집중력
+          <input type="range" min="0" max="100" value="80" id="focusRange" />
+        </label>
+
+        <label>
+          색감·패턴 인지
+          <input type="range" min="0" max="100" value="70" id="visualRange" />
+        </label>
+
+        <label>
+          소통 부담 낮음
+          <input type="range" min="0" max="100" value="65" id="communicationRange" />
+        </label>
+
+        <div class="score-result">
+          <p>추천 과제</p>
+          <h3 id="recommendedTask">자료 정리 및 이미지 분류</h3>
+          <strong id="matchScore">82%</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="business">
+      <div class="section-title">
+        <p class="eyebrow">Business Plan</p>
+        <h2>사업화 및 확산 전략</h2>
+      </div>
+
+      <div class="grid-4">
+        <article class="step-card">
+          <span>1단계</span>
+          <h3>MVP 개발</h3>
+          <p>웹 프로토타입, 포트폴리오 등록, 공공데이터 연동, 기본 추천 모듈 구현</p>
+        </article>
+
+        <article class="step-card">
+          <span>2단계</span>
+          <h3>현장 파일럿</h3>
+          <p>복지관, 직업재활시설, 사회적기업과 테스트 및 사용자 피드백 수집</p>
+        </article>
+
+        <article class="step-card">
+          <span>3단계</span>
+          <h3>정식 서비스화</h3>
+          <p>기업 회원제, 기관 관리자 대시보드, 큐레이터 검토 기능 고도화</p>
+        </article>
+
+        <article class="step-card">
+          <span>4단계</span>
+          <h3>전국 확산</h3>
+          <p>지자체, 고용센터, 장애인 의무고용 기업 대상 B2G·B2B 확장</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="contact-card">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>일잇다와 함께 고용의 연결 방식을 바꾸세요</h2>
+          <p>
+            기관, 기업, 구직자를 연결하는 포용적 고용 플랫폼을 목표로 합니다.
+          </p>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <input type="text" id="name" placeholder="이름" required />
+          <input type="email" id="email" placeholder="이메일" required />
+          <select id="type" required>
+            <option value="">문의 유형 선택</option>
+            <option>기관 협력</option>
+            <option>기업 제휴</option>
+            <option>서비스 이용</option>
+            <option>기타 문의</option>
+          </select>
+          <textarea id="message" placeholder="문의 내용을 입력하세요." required></textarea>
+          <button type="submit" class="btn primary">문의 보내기</button>
+          <p class="form-message" id="formMessage"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <button class="top-button" id="topButton" aria-label="맨 위로 이동">↑</button>
+
+  <footer class="footer">
+    <p>© 2026 일잇다(EATTA). AI 기반 맞춤형 직무·과제 매칭 플랫폼.</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
