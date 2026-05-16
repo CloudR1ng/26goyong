@@ -623,6 +623,129 @@ input[type="range"] {
   transform: translateY(0);
 }
 
+.impact-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 32px 26px;
+  box-shadow: 0 12px 38px rgba(15, 23, 42, 0.05);
+  text-align: left;
+}
+
+.impact-card .count {
+  display: block;
+  font-size: 2.8rem;
+  letter-spacing: -0.04em;
+  color: var(--primary);
+  margin-bottom: 14px;
+}
+
+.impact-card p {
+  color: var(--text);
+  font-weight: 800;
+}
+
+.impact-card small {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.cta-grid {
+  gap: 24px;
+}
+
+.cta-card {
+  position: relative;
+  display: block;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 32px 28px 70px;
+  box-shadow: 0 12px 38px rgba(15, 23, 42, 0.05);
+  transition: 0.25s ease;
+  overflow: hidden;
+}
+
+.cta-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.06), transparent 60%);
+  opacity: 0;
+  transition: 0.25s ease;
+  pointer-events: none;
+}
+
+.cta-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 50px rgba(15, 23, 42, 0.12);
+  border-color: var(--primary);
+}
+
+.cta-card:hover::before {
+  opacity: 1;
+}
+
+.cta-role {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--primary);
+  font-size: 0.82rem;
+  font-weight: 900;
+  margin-bottom: 18px;
+}
+
+.cta-company .cta-role {
+  background: rgba(22, 163, 74, 0.1);
+  color: var(--secondary);
+}
+
+.cta-curator .cta-role {
+  background: rgba(15, 23, 42, 0.08);
+  color: var(--dark);
+}
+
+.cta-card h3 {
+  font-size: 1.55rem;
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+  line-height: 1.25;
+}
+
+.cta-card p {
+  color: var(--muted);
+}
+
+.cta-arrow {
+  position: absolute;
+  right: 28px;
+  bottom: 28px;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: var(--dark);
+  color: white;
+  display: grid;
+  place-items: center;
+  font-size: 1.2rem;
+  font-weight: 900;
+  transition: 0.25s ease;
+}
+
+.cta-card:hover .cta-arrow {
+  background: var(--primary);
+  transform: translateX(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
 @media (max-width: 900px) {
   .menu-toggle {
     display: block;

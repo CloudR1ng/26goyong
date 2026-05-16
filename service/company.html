@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>일잇다 — 기업 업무 분해</title>
+  <link rel="stylesheet" href="service.css" />
+</head>
+<body>
+  <header class="svc-header">
+    <div class="svc-header-inner">
+      <a href="../index.html" class="svc-brand">
+        <span class="logo-mark">잇</span>
+        <span><strong>일잇다</strong><small>기업</small></span>
+      </a>
+      <span class="svc-role-pill" style="background:rgba(22,163,74,0.1); color:#16a34a;">기업 화면</span>
+    </div>
+  </header>
+
+  <main class="svc-main">
+    <div class="svc-title">
+      <h1>업무를 세부 과제로 분해해보세요</h1>
+      <p>채용공고 또는 업무 설명을 입력하면 NLP 모델이 세부 과제와 요구 역량으로 분해합니다.</p>
+    </div>
+
+    <div class="stepper">
+      <div class="step active" data-step="1"><span class="step-num">1</span>업무 입력</div>
+      <div class="step" data-step="2"><span class="step-num">2</span>과제 분해</div>
+      <div class="step" data-step="3"><span class="step-num">3</span>후보자 매칭</div>
+    </div>
+
+    <section class="panel" id="panel-1">
+      <h2>Step 1. 업무 설명 입력</h2>
+      <p class="desc">아래 프리셋을 선택하거나 직접 작성해보세요.</p>
+
+      <div class="preset-row">
+        <button class="preset-btn" data-preset="office">사무보조</button>
+        <button class="preset-btn" data-preset="cafe">카페 운영보조</button>
+        <button class="preset-btn" data-preset="data">데이터 입력</button>
+        <button class="preset-btn" data-preset="logistics">물류 포장</button>
+      </div>
+
+      <textarea id="jobInput" class="svc-input" placeholder="예: 사무실 내 서류 정리, 자료 분류, 간단한 데이터 입력, 전화 응대 보조 등의 업무를 수행합니다."></textarea>
+
+      <div class="step-nav">
+        <span></span>
+        <button class="btn primary" id="analyzeBtn">AI 분해하기 →</button>
+      </div>
+    </section>
+
+    <section class="panel" id="panel-2" style="display:none">
+      <h2>Step 2. AI 과제 분해 결과</h2>
+      <p class="desc">NLP 모델(BERT 등)이 텍스트에서 세부 과제, 필요 역량, 난이도를 추출했습니다.</p>
+
+      <div class="results-grid" id="taskGrid"></div>
+
+      <div class="step-nav">
+        <button class="btn ghost" data-goto="1">← 다시 입력</button>
+        <button class="btn primary" data-goto="3">후보자 매칭 →</button>
+      </div>
+    </section>
+
+    <section class="panel" id="panel-3" style="display:none">
+      <h2>Step 3. 적합 후보자 매칭</h2>
+      <p class="desc">분해된 과제 요구 역량과 등록된 구직자 강점 벡터를 매칭한 결과입니다.</p>
+
+      <div class="results-grid" id="candidateGrid"></div>
+
+      <div class="step-nav">
+        <button class="btn ghost" data-goto="2">← 분해 결과 보기</button>
+        <button class="btn primary" id="requestReview">큐레이터 검토 요청 →</button>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="company.js"></script>
+</body>
+</html>

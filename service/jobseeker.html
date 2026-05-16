@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>일잇다 — 구직자 포트폴리오 등록</title>
+  <link rel="stylesheet" href="service.css" />
+</head>
+<body>
+  <header class="svc-header">
+    <div class="svc-header-inner">
+      <a href="../index.html" class="svc-brand">
+        <span class="logo-mark">잇</span>
+        <span><strong>일잇다</strong><small>구직자</small></span>
+      </a>
+      <span class="svc-role-pill">구직자 화면</span>
+    </div>
+  </header>
+
+  <main class="svc-main">
+    <div class="svc-title">
+      <h1>나의 강점으로 일을 찾아보세요</h1>
+      <p>이력서 대신 포트폴리오를 등록하면 AI가 강점을 분석하고 적합한 과제를 추천합니다.</p>
+    </div>
+
+    <div class="stepper" id="stepper">
+      <div class="step active" data-step="1"><span class="step-num">1</span>포트폴리오</div>
+      <div class="step" data-step="2"><span class="step-num">2</span>강점 분석</div>
+      <div class="step" data-step="3"><span class="step-num">3</span>추천 과제</div>
+      <div class="step" data-step="4"><span class="step-num">4</span>성장 경로</div>
+    </div>
+
+    <!-- Step 1 -->
+    <section class="panel" id="panel-1">
+      <h2>Step 1. 포트폴리오 샘플 선택</h2>
+      <p class="desc">그림, 영상, 텍스트, 음성 등 비정형 자료 중 하나를 선택해보세요. 실제 서비스에서는 직접 업로드합니다.</p>
+
+      <div class="sample-grid" id="sampleGrid">
+        <button class="sample-card" data-sample="sunflower" data-strengths='{"color":85,"focus":70,"motor":78,"comm":35,"detail":80}'>
+          <div class="sample-thumb" style="background: linear-gradient(135deg, #fef3c7, #fde68a);">🌻</div>
+          <strong>해바라기 그림</strong>
+          <small>유화·풍부한 색감</small>
+        </button>
+        <button class="sample-card" data-sample="pattern" data-strengths='{"color":55,"focus":92,"motor":80,"comm":30,"detail":95}'>
+          <div class="sample-thumb" style="background: linear-gradient(135deg, #dbeafe, #bfdbfe);">🔷</div>
+          <strong>반복 패턴 도형</strong>
+          <small>정밀한 반복 작업</small>
+        </button>
+        <button class="sample-card" data-sample="portrait" data-strengths='{"color":75,"focus":68,"motor":85,"comm":50,"detail":88}'>
+          <div class="sample-thumb" style="background: linear-gradient(135deg, #fce7f3, #fbcfe8);">👤</div>
+          <strong>인물 스케치</strong>
+          <small>섬세한 소근육 표현</small>
+        </button>
+        <button class="sample-card" data-sample="essay" data-strengths='{"color":40,"focus":72,"motor":40,"comm":85,"detail":78}'>
+          <div class="sample-thumb" style="background: linear-gradient(135deg, #e0e7ff, #c7d2fe);">📝</div>
+          <strong>자기소개 글</strong>
+          <small>자유 서술형 텍스트</small>
+        </button>
+        <button class="sample-card" data-sample="voice" data-strengths='{"color":35,"focus":65,"motor":45,"comm":90,"detail":60}'>
+          <div class="sample-thumb" style="background: linear-gradient(135deg, #d1fae5, #a7f3d0);">🎙️</div>
+          <strong>음성 자기소개</strong>
+          <small>대체 텍스트 자동 변환</small>
+        </button>
+        <button class="sample-card" data-sample="video" data-strengths='{"color":68,"focus":75,"motor":70,"comm":72,"detail":70}'>
+          <div class="sample-thumb" style="background: linear-gradient(135deg, #fee2e2, #fecaca);">🎬</div>
+          <strong>활동 영상</strong>
+          <small>일상 작업 모습</small>
+        </button>
+      </div>
+
+      <div class="step-nav">
+        <span></span>
+        <button class="btn primary" id="toStep2" disabled>강점 분석하기 →</button>
+      </div>
+    </section>
+
+    <!-- Step 2 -->
+    <section class="panel" id="panel-2" style="display:none">
+      <h2>Step 2. AI 강점 분석 결과</h2>
+      <p class="desc">선택한 포트폴리오를 NLP·컴퓨터 비전 모델이 분석한 강점 지표입니다.</p>
+
+      <div class="strengths" id="strengths">
+        <div class="strength-row">
+          <span class="label">색감·패턴 인지</span>
+          <div class="strength-bar"><span data-key="color"></span></div>
+          <span class="value" data-key="color">0%</span>
+        </div>
+        <div class="strength-row">
+          <span class="label">반복 집중력</span>
+          <div class="strength-bar"><span data-key="focus"></span></div>
+          <span class="value" data-key="focus">0%</span>
+        </div>
+        <div class="strength-row">
+          <span class="label">소근육 조정</span>
+          <div class="strength-bar"><span data-key="motor"></span></div>
+          <span class="value" data-key="motor">0%</span>
+        </div>
+        <div class="strength-row">
+          <span class="label">소통 역량</span>
+          <div class="strength-bar"><span data-key="comm"></span></div>
+          <span class="value" data-key="comm">0%</span>
+        </div>
+        <div class="strength-row">
+          <span class="label">꼼꼼함·정확도</span>
+          <div class="strength-bar"><span data-key="detail"></span></div>
+          <span class="value" data-key="detail">0%</span>
+        </div>
+      </div>
+
+      <div class="reason" id="reason">
+        <strong>분석 근거</strong> — 선택한 포트폴리오의 시각적 특징과 텍스트 패턴에서 추출된 강점입니다.
+      </div>
+
+      <div class="step-nav">
+        <button class="btn ghost" data-goto="1">← 다시 선택</button>
+        <button class="btn primary" data-goto="3">추천 과제 보기 →</button>
+      </div>
+    </section>
+
+    <!-- Step 3 -->
+    <section class="panel" id="panel-3" style="display:none">
+      <h2>Step 3. 추천 과제</h2>
+      <p class="desc">강점 벡터와 코사인 유사도가 높은 순서로 정렬된 과제입니다. 클릭하면 추천 근거를 볼 수 있습니다.</p>
+
+      <div class="results-grid" id="taskGrid"></div>
+
+      <div class="step-nav">
+        <button class="btn ghost" data-goto="2">← 분석 다시 보기</button>
+        <button class="btn primary" data-goto="4">성장 경로 보기 →</button>
+      </div>
+    </section>
+
+    <!-- Step 4 -->
+    <section class="panel" id="panel-4" style="display:none">
+      <h2>Step 4. 성장 경로 추천</h2>
+      <p class="desc">현재 부족한 역량을 보완할 수 있는 NCS 기반 직업훈련 과정입니다.</p>
+
+      <div class="results-grid" id="trainingGrid"></div>
+
+      <div class="step-nav">
+        <button class="btn ghost" data-goto="3">← 과제 다시 보기</button>
+        <a href="index.html" class="btn primary">처음으로</a>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="jobseeker.js"></script>
+</body>
+</html>

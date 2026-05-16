@@ -59,6 +59,21 @@ const featureData = {
     label: "핵심 기능 05",
     title: "직무훈련·성장 경로 추천",
     text: "바로 취업이 어려운 경우 NCS 기반 직업훈련 데이터를 활용하여 부족 역량을 보완할 수 있는 훈련 과정과 성장 경로를 제안합니다."
+  },
+  match: {
+    label: "핵심 기능 06",
+    title: "공공데이터 기반 직무 추천",
+    text: "한국장애인고용공단의 취업 정보, 워크넷 채용정보, NCS 직무데이터를 결합하여 지역·업종·장애유형 필터로 적합 직무를 제안합니다."
+  },
+  record: {
+    label: "핵심 기능 07",
+    title: "과제 수행 이력 기록",
+    text: "사용자가 수행한 과제·평가·보상 내역을 블록체인 기반으로 투명하게 기록하여 취약계층의 경력 증빙과 역량 프로필 축적을 지원합니다."
+  },
+  access: {
+    label: "핵심 기능 08",
+    title: "접근성 중심 UI/UX",
+    text: "화면 낭독, 고대비 모드, 음성명령, 쉬운 말 변환 등 장애인 사용자를 고려한 다양한 접근성 기능을 제공합니다. 카드형 추천과 단계별 안내로 누구나 쉽게 사용할 수 있습니다."
   }
 };
 
@@ -164,7 +179,34 @@ const observer = new IntersectionObserver(
   }
 );
 
-document.querySelectorAll(".section, .info-card, .step-card, .timeline-item").forEach((element) => {
+document.querySelectorAll(".section, .info-card, .step-card, .timeline-item, .impact-card, .cta-card").forEach((element) => {
   element.style.opacity = 0;
   observer.observe(element);
 });
+
+const countObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = parseFloat(el.dataset.target);
+      const suffix = el.dataset.suffix || "";
+      const decimals = target % 1 === 0 ? 0 : 2;
+      const duration = 1200;
+      const start = performance.now();
+
+      const tick = (now) => {
+        const t = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - t, 3);
+        const value = target * eased;
+        el.textContent = value.toFixed(decimals) + suffix;
+        if (t < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+      countObserver.unobserve(el);
+    });
+  },
+  { threshold: 0.4 }
+);
+
+document.querySelectorAll(".count").forEach((el) => countObserver.observe(el));
